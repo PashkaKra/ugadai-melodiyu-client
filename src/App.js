@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import {useState} from 'react';
+import {Routes, Route} from 'react-router-dom';
+import Menu from './pages/Menu';
+import Round1 from './pages/Round1';
+import Round2 from './pages/Round2';
+import Round3 from './pages/Round3';
+import Playercard from './components/Playercard/Playercard';
+import playerphoto1 from './components/Playercard/player1.jpg';
+import playerphoto2 from './components/Playercard/player2.jpg';
+import playerphoto3 from './components/Playercard/player3.jpg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [pull, setPull] = useState(0);
+
+    return (
+        <div className="App">
+            <div>
+                <Playercard img={playerphoto1} pull={pull}/>                                                        
+                <Playercard img={playerphoto2} pull={pull}/>                                                        
+                <Playercard img={playerphoto3} pull={pull}/> 
+            </div>
+            <Routes>
+                <Route path="/" element={<Menu/>}/>
+                <Route path="/round1" element={<Round1 onChange={(coin) => setPull(coin)}/>}/>
+                <Route path="/round2" element={<Round2 onChange={(coin) => setPull(coin)}/>}/>
+                <Route path="/round3" element={<Round3/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
