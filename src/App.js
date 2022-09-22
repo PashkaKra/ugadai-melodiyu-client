@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import logo from './logo.svg';
 import {Routes, Route} from 'react-router-dom';
 import Menu from './pages/Menu';
 import Round1 from './pages/Round1';
@@ -14,11 +15,14 @@ const App = () => {
     const [pull, setPull] = useState(0);
 
     return (
-        <div className="App">
-            <div>
+        <div>
+             <header>
+                <img src={logo} alt="logo"/>
+             </header>
+            <div className="App">
                 <Playercard img={playerphoto1} pull={pull}/>                                                        
                 <Playercard img={playerphoto2} pull={pull}/>                                                        
-                <Playercard img={playerphoto3} pull={pull}/> 
+                <Playercard img={playerphoto3} pull={pull}/>
             </div>
             <Routes>
                 <Route path="/" element={<Menu/>}/>
