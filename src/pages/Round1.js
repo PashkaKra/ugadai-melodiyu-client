@@ -1,6 +1,7 @@
 import {useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import React from 'react'; 
+import './Table.css';
 //import round1 from '../settings'
 //import Playercard from '../components/Playercard/Playercard';
 import note_img from './note.svg';
@@ -70,11 +71,11 @@ const Round1 = ({onChange}) => {
     }
 
     return(
-        <div>
+        <div className="NoteTable">
             <Link to="/">playerphoto1</Link>
             <Link to="/round2">next round</Link>
             <div>
-                {category[0]}
+                <h2 className="category">{category[0]}</h2>
                 <img src={img_note[0]} onClick={() => audplay(noteRef1, 0, 0)} alt="note" width="50px" height="100px"/>
                 <img src={img_note[1]} onClick={() => audplay(noteRef2, 1, 1)} alt="note" width="50px" height="100px"/>
                 <img src={img_note[2]} onClick={() => audplay(noteRef3, 2, 2)} alt="note" width="50px" height="100px"/>
@@ -82,7 +83,7 @@ const Round1 = ({onChange}) => {
             </div>
 
             <div>
-                {category[1]}
+                <h2 className="category">{category[1]}</h2>
                 <img src={img_note[4]} onClick={() => audplay(noteRef5, 0, 4)} alt="note" width="50px" height="100px"/>                
                 <img src={img_note[5]} onClick={() => audplay(noteRef6, 1, 5)} alt="note" width="50px" height="100px"/>                
                 <img src={img_note[6]} onClick={() => audplay(noteRef7, 2, 6)} alt="note" width="50px" height="100px"/>                
@@ -90,7 +91,7 @@ const Round1 = ({onChange}) => {
             </div>
 
             <div>
-                {category[2]}
+                <h2 className="category">{category[2]}</h2>
                 <img src={img_note[8]} onClick={() => audplay(noteRef9, 0, 8)} alt="note" width="50px" height="100px"/>                
                 <img src={img_note[9]} onClick={() => audplay(noteRef10, 1, 9)} alt="note" width="50px" height="100px"/>                
                 <img src={img_note[10]} onClick={() => audplay(noteRef11, 2, 10)} alt="note" width="50px" height="100px"/>                
@@ -98,7 +99,7 @@ const Round1 = ({onChange}) => {
             </div>                                                                                                               
                                                                                                                                  
             <div>
-                {category[3]}
+                <h2 className="category">{category[3]}</h2>
                 <img src={img_note[12]} onClick={() => audplay(noteRef13, 0, 12)} alt="note" width="50px" height="100px"/>                
                 <img src={img_note[13]} onClick={() => audplay(noteRef14, 1, 13)} alt="note" width="50px" height="100px"/>                
                 <img src={img_note[14]} onClick={() => audplay(noteRef15, 2, 14)} alt="note" width="50px" height="100px"/>                
