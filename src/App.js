@@ -17,7 +17,7 @@ const App = () => {
              <header>
                 <div>
                     <Link to="/" className="HeaderLink"><img src={logo} alt="logo"/></Link>
-                    <h1>Угадай мелодию</h1>
+                    <div className="title"><h1>Угадай мелодию</h1></div>
                 </div>
             </header>
             <Routes>

@@ -18,9 +18,13 @@ header{
 }
 
 h1{
-  display: inline;
+  /*position: absolute;
+  display: inline-block;*/
   background-color: #ec6718ff;
   color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
 }
 
 
@@ -43,12 +47,13 @@ header img{
     border-radius: 50%;
     width: 300px;
     height: 300px;
+    margin: 15px;
 }
 
 .kush{
     position: absolute;
-    height: 70px;
-    top: 100px;
+    height: 90px;
+    top: 90px;
     width: 50%;
     left: 25%;
     border-radius: 10px;
@@ -58,6 +63,8 @@ header img{
 
 .player{
     position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
     bottom: 5px;
     width: 80%;
     left: 10%;
@@ -67,14 +74,26 @@ header img{
 
 .playerlogo{
     position: absolute;
-    height: 110px;
+    height: 150px;
+    left: -15px;
+    top: -20px;
 }
 
 .category{
     display: inline-block;
     background-color: #ec6718ff;
     color: white;
+    padding-left: 10px;
     width: 500px;
+    /*height: 90px;*/
+}
+
+.title{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 code {

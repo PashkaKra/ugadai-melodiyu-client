@@ -75,36 +75,44 @@ const Round1 = ({onChange}) => {
             <Link to="/">playerphoto1</Link>
             <Link to="/round2">next round</Link>
             <div>
-                <h2 className="category">{category[0]}</h2>
-                <img src={img_note[0]} onClick={() => audplay(noteRef1, 0, 0)} alt="note" width="50px" height="100px"/>
-                <img src={img_note[1]} onClick={() => audplay(noteRef2, 1, 1)} alt="note" width="50px" height="100px"/>
-                <img src={img_note[2]} onClick={() => audplay(noteRef3, 2, 2)} alt="note" width="50px" height="100px"/>
-                <img src={img_note[3]} onClick={() => audplay(noteRef4, 3, 3)} alt="note" width="50px" height="100px"/>
+                <div className="category"><h2>{category[0]}</h2></div>
+                <div className="notewrapper">
+                    <img src={img_note[0]} onClick={() => audplay(noteRef1, 0, 0)} alt="note" className="note1"/>
+                    <img src={img_note[1]} onClick={() => audplay(noteRef2, 1, 1)} alt="note" className="note2"/>
+                    <img src={img_note[2]} onClick={() => audplay(noteRef3, 2, 2)} alt="note" className="note1"/>
+                    <img src={img_note[3]} onClick={() => audplay(noteRef4, 3, 3)} alt="note" className="note2"/>
+                </div>
             </div>
 
             <div>
-                <h2 className="category">{category[1]}</h2>
-                <img src={img_note[4]} onClick={() => audplay(noteRef5, 0, 4)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[5]} onClick={() => audplay(noteRef6, 1, 5)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[6]} onClick={() => audplay(noteRef7, 2, 6)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[7]} onClick={() => audplay(noteRef8, 3, 7)} alt="note" width="50px" height="100px"/>                
+                <div className="category"><h2>{category[1]}</h2></div>
+                <div className="notewrapper">
+                    <img src={img_note[4]} onClick={() => audplay(noteRef5, 0, 4)} alt="note" className="note1"/>                
+                    <img src={img_note[5]} onClick={() => audplay(noteRef6, 1, 5)} alt="note" className="note2"/>                
+                    <img src={img_note[6]} onClick={() => audplay(noteRef7, 2, 6)} alt="note" className="note1"/>                
+                    <img src={img_note[7]} onClick={() => audplay(noteRef8, 3, 7)} alt="note" className="note2"/>                
+                </div>
             </div>
 
             <div>
-                <h2 className="category">{category[2]}</h2>
-                <img src={img_note[8]} onClick={() => audplay(noteRef9, 0, 8)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[9]} onClick={() => audplay(noteRef10, 1, 9)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[10]} onClick={() => audplay(noteRef11, 2, 10)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[11]} onClick={() => audplay(noteRef12, 3, 11)} alt="note" width="50px" height="100px"/>                
-            </div>                                                                                                               
+                <div className="category"><h2>{category[2]}</h2></div>
+                <div className="notewrapper">
+                    <img src={img_note[8]} onClick={() => audplay(noteRef9, 0, 8)} alt="note" className="note1"/>                
+                    <img src={img_note[9]} onClick={() => audplay(noteRef10, 1, 9)} alt="note" className="note2"/>                
+                    <img src={img_note[10]} onClick={() => audplay(noteRef11, 2, 10)} alt="note" className="note1"/>                
+                    <img src={img_note[11]} onClick={() => audplay(noteRef12, 3, 11)} alt="note" className="note2"/>                
+                </div>
+            </div>
                                                                                                                                  
             <div>
-                <h2 className="category">{category[3]}</h2>
-                <img src={img_note[12]} onClick={() => audplay(noteRef13, 0, 12)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[13]} onClick={() => audplay(noteRef14, 1, 13)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[14]} onClick={() => audplay(noteRef15, 2, 14)} alt="note" width="50px" height="100px"/>                
-                <img src={img_note[15]} onClick={() => audplay(noteRef16, 3, 15)} alt="note" width="50px" height="100px"/>                
-            </div> 
+                <div className="category"><h2>{category[3]}</h2></div>
+                <div className="notewrapper">
+                    <img src={img_note[12]} onClick={() => audplay(noteRef13, 0, 12)} alt="note" className="note1"/>                
+                    <img src={img_note[13]} onClick={() => audplay(noteRef14, 1, 13)} alt="note" className="note2"/>                
+                    <img src={img_note[14]} onClick={() => audplay(noteRef15, 2, 14)} alt="note" className="note1"/>                
+                    <img src={img_note[15]} onClick={() => audplay(noteRef16, 3, 15)} alt="note" className="note2"/>                
+                </div>
+            </div>
 
             <audio ref={noteRef1} src={note1}/>
             <audio ref={noteRef2} src={note2}/>
