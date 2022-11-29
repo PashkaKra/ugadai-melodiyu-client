@@ -1,4 +1,5 @@
 .NoteTable{
+    display: inline-block;
     border: 7px solid #ec6718ff;
     border-radius: 20px;
     background-color: #f29300ff;
@@ -6,6 +7,7 @@
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 40px;
+    margin-top: 0%;
 }
 
 .notewrapper{
@@ -19,6 +21,29 @@
     padding-bottom: 15px;
 }
 
+.notewrapper2{
+    position: relative;
+    display: inline-block;
+    background-image: url("./line.svg");
+    background-repeat: repeat-x; /*background-color: green;*/
+    
+    width: 100%;
+    background-position: bottom;
+    padding-bottom: 15px;
+}
+
+.MelodyTitle{
+    /*position: relative;
+    display: inline-block;*/
+    font-size: 34px;
+    height: 90px;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .note1{
     width: 50px;
     height: 100px;
@@ -31,6 +56,39 @@
     padding-bottom: 20px;
     padding-left: 85px;
 
+}
+
+.nRound{
+    display: inline-block;
+    font-size: 100px;
+    color: #ec6718ff;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.number{
+    font-size: 400px;
+}
+
+.TimerCounter{
+    font-size: 100px;
+    height: 140px;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.RoundLink{
+    display: inline-block;
+    font-size: 100px;
+    color: #ec6718ff;
+    padding: 50px;
+    text-decoration: none;
+}
+
+.RoundLink:hover{
+    color: #f29300ff;
 }
 
 .block{

@@ -5,6 +5,7 @@ import Menu from './pages/Menu';
 import Round1 from './pages/Round1';
 //import Round2 from './pages/Round2';
 import Round3 from './pages/Round3';
+import Round4 from './pages/Round4';
 import Playercard from './components/Playercard/Playercard';
 import './App.css';
 
@@ -42,6 +43,20 @@ import r2_note14 from './sounds/round2/kat4note2.mp3';
 import r2_note15 from './sounds/round2/kat4note3.mp3';
 import r2_note16 from './sounds/round2/kat4note4.mp3';
 
+import r3_note1 from './sounds/round3/note1.mp3';
+import r3_note2 from './sounds/round3/note2.mp3';
+import r3_note3 from './sounds/round3/note3.mp3';
+import r3_note4 from './sounds/round3/note4.mp3';
+import r3_note5 from './sounds/round3/note5.mp3';
+
+import r4_note1 from './sounds/round4/note1.mp3';                                                                                                                                                              
+import r4_note2 from './sounds/round4/note2.mp3';                                                                                                                                                              
+import r4_note3 from './sounds/round4/note3.mp3';                                                                                                                                                              
+import r4_note4 from './sounds/round4/note4.mp3';                                                                                                                                                              
+import r4_note5 from './sounds/round4/note5.mp3';
+import r4_note6 from './sounds/round4/note6.mp3';
+import r4_note7 from './sounds/round4/note7.mp3';
+
 
 const App = () => {
     const [pull, setPull] = useState(0);
@@ -54,6 +69,15 @@ const App = () => {
         r1_note9, r1_note10, r1_note11, r1_note12, r1_note13, r1_note14, r1_note15, r1_note16];
     const notesRound2 = [r2_note1, r2_note2, r2_note3, r2_note4, r2_note5, r2_note6, r2_note7, r2_note8,
         r2_note9, r2_note10, r2_note11, r2_note12, r2_note13, r2_note14, r2_note15, r2_note16];
+    const notesRound3 = [r3_note1, r3_note2, r3_note3, r3_note4, r3_note5];
+    const descript = [
+        "Песня о ранении чьих-то чувств, но она также о попытках не терять контакта с сами собой.",
+        "Песня о том, что в отношениях нужна передышка.",
+        "Песня о влюбленных спортсменах.",
+        "Песня о том, что нужно прислушиваться к себе.",
+        "Песня о любви Тьмы к Свету.", " "
+    ];
+    const notesRound4 = [r4_note1, r4_note2, r4_note3, r4_note4, r4_note5, r4_note6, r4_note7]; 
     return (
         <div>
              <header>
@@ -66,7 +90,8 @@ const App = () => {
                 <Route path="/" element={<Menu/>}/>
                 <Route path="/round1" element={<Round1 round="1" note={notesRound1} category={category1} onChange={(i) => setPull(point1[i])}/>}/>
                 <Route path="/round2" element={<Round1 round="2" note={notesRound2} category={category2} onChange={(i) => setPull(point2[i])}/>}/>
-                <Route path="/round3" element={<Round3/>}/>
+                <Route path="/round3" element={<Round3 round="3" note={notesRound3} description={descript}/>}/>
+                <Route path="/round4" element={<Round4 round="4" note={notesRound4}/>}/>
             </Routes>
             <div className="Playercard">                                                            
                 <Playercard pull={pull} PlayerName={PlayerName[0]}/>                                        
