@@ -1,36 +1,116 @@
 .NoteTable{
-    display: inline-block;
+    /*display: inline-block;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
     border: 7px solid #ec6718ff;
     border-radius: 20px;
     background-color: #f29300ff;
     width: 60%;
-    margin-right: auto;
+    height: 600px;
+    /*margin-right: auto;
     margin-left: auto;
     padding-bottom: 40px;
-    margin-top: 0%;
+    margin-top: 0%;*/
+}
+
+.gridbox{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "head head head head Playercard"
+                         "mainbox mainbox mainbox mainbox Playercard"
+                         "mainbox mainbox mainbox mainbox Playercard"
+                         "mainbox mainbox mainbox mainbox Playercard";
+}
+
+.head{
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    grid-area: head;
+    width: 100%;
+    /*background-color: aquamarine;*/
+}
+
+.mainbox{
+    display: flex;
+    grid-area: mainbox;
+    /*background-color: blue;*/
+}
+
+.nRound{
+    /*display: inline-block;*/
+    grid-area: nRound;
+    font-size: 100px;
+    color: #ec6718ff;
+    padding-left: 40px;
+    padding-right: 40px;
+    /*background-color: green;*/
+}
+
+.flexbox{
+    display: flex;
+    height: 130px;
+}
+p{
+    /*position: absolute;*/
+    width: 100%;
+}
+.linebox1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.linebox2{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.linebox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 80%;
+    align-self: center;
+}
+
+hr{
+    color: black;
+    width: 100%;
+    text-decoration: none;
+    border-color: black;
 }
 
 .notewrapper{
     position: relative;
-    display: inline-block;
-    background-image: url("./line.svg");
+    /*display: inline-block;*/
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    /*background-image: url("./line.svg");
     background-repeat: repeat-x; /*background-color: green;*/
     
-    width: calc(100% - 510px);
+    /*width: calc(100% - 510px);
     background-position: bottom;
-    padding-bottom: 15px;
+    padding-bottom: 15px;*/
 }
 
-.notewrapper2{
+/*.notewrapper2{
     position: relative;
     display: inline-block;
     background-image: url("./line.svg");
-    background-repeat: repeat-x; /*background-color: green;*/
-    
+    background-repeat: repeat-x;
     width: 100%;
     background-position: bottom;
     padding-bottom: 15px;
-}
+}*/
 
 .MelodyTitle{
     /*position: relative;
@@ -47,23 +127,19 @@
 .note1{
     width: 50px;
     height: 100px;
-    padding-left: 85px;
+    z-index: 999;
+    align-self: flex-end;
+    /*padding-left: 85px;*/
 }
 
 .note2{
     width: 50px;
     height: 100px;
-    padding-bottom: 20px;
-    padding-left: 85px;
+    z-index: 999;
+    align-self: flex-start;
+    /*padding-bottom: 20px;
+    padding-left: 85px;*/
 
-}
-
-.nRound{
-    display: inline-block;
-    font-size: 100px;
-    color: #ec6718ff;
-    padding-left: 40px;
-    padding-right: 40px;
 }
 
 .number{

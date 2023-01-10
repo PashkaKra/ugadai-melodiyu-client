@@ -1,4 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
+import { SOUNDS_R4 } from '../preferences/PrefRound4';
 import note_img from './note.svg';
 import red_note_img from './rednote.svg';
 import green_note_img from './greennote.svg';
@@ -79,7 +80,7 @@ const Round4 = (props) => {
     }
     //props.note.play();
     return(
-        <div>
+        <div className="mainbox">
             <div className="nRound">
                 <div className="number">{props.round}</div>
                 <div>Раунд</div>
@@ -88,25 +89,31 @@ const Round4 = (props) => {
 
             <div className="NoteTable">
                 <div className="TimerCounter">{time}</div>
-                {/*<div>{counter}</div>*/}
-                <div className="notewrapper2">
-                    <img src={img_note[0]} onClick={() => buttonPlay(0)} alt="note" className="note1"/>
-                    <img src={img_note[1]} onClick={() => buttonPlay(1)} alt="note" className="note2"/>
-                    <img src={img_note[2]} onClick={() => buttonPlay(2)} alt="note" className="note1"/>
-                    <img src={img_note[3]} onClick={() => buttonPlay(3)} alt="note" className="note2"/>
-                    <img src={img_note[4]} onClick={() => buttonPlay(4)} alt="note" className="note1"/>
-                    <img src={img_note[5]} onClick={() => buttonPlay(5)} alt="note" className="note2"/>
-                    <img src={img_note[6]} onClick={() => buttonPlay(6)} alt="note" className="note1"/>
+                <div className="flexbox">
+                  <div className="notewrapper">
+                      <img src={img_note[0]} onClick={() => buttonPlay(0)} alt="note" className="note1"/>
+                      <img src={img_note[1]} onClick={() => buttonPlay(1)} alt="note" className="note2"/>
+                      <img src={img_note[2]} onClick={() => buttonPlay(2)} alt="note" className="note1"/>
+                      <img src={img_note[3]} onClick={() => buttonPlay(3)} alt="note" className="note2"/>
+                      <img src={img_note[4]} onClick={() => buttonPlay(4)} alt="note" className="note1"/>
+                      <img src={img_note[5]} onClick={() => buttonPlay(5)} alt="note" className="note2"/>
+                      <img src={img_note[6]} onClick={() => buttonPlay(6)} alt="note" className="note1"/>
+                      <div className="linebox1">
+                          <div className="linebox2">
+                              <div className="linebox"><hr/><hr/><hr/><hr/></div>
+                          </div>
+                      </div>
+                  </div>
                 </div>
             </div>
 
-            <audio ref={noteRef[0]} src={props.note[0]}/>
-            <audio ref={noteRef[1]} src={props.note[1]}/>
-            <audio ref={noteRef[2]} src={props.note[2]}/>
-            <audio ref={noteRef[3]} src={props.note[3]}/>
-            <audio ref={noteRef[4]} src={props.note[4]}/>
-            <audio ref={noteRef[5]} src={props.note[5]}/>
-            <audio ref={noteRef[6]} src={props.note[6]}/>
+            <audio ref={noteRef[0]} src={SOUNDS_R4.SOUND_1}/>
+            <audio ref={noteRef[1]} src={SOUNDS_R4.SOUND_2}/>
+            <audio ref={noteRef[2]} src={SOUNDS_R4.SOUND_3}/>
+            <audio ref={noteRef[3]} src={SOUNDS_R4.SOUND_4}/>
+            <audio ref={noteRef[4]} src={SOUNDS_R4.SOUND_5}/>
+            <audio ref={noteRef[5]} src={SOUNDS_R4.SOUND_6}/>
+            <audio ref={noteRef[6]} src={SOUNDS_R4.SOUND_7}/>
         </div>
     );
 }

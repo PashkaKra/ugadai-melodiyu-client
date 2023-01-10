@@ -7,9 +7,12 @@ import Round1 from './pages/Round1';
 import Round3 from './pages/Round3';
 import Round4 from './pages/Round4';
 import Playercard from './components/Playercard/Playercard';
+import { PLAYER_NAMES } from './preferences/PrefCom';
 import './App.css';
 
-import r1_note1 from './sounds/round1/kat1note1.mp3';
+/*import { SOUNDS } from './preferences/PrefRound1';*/
+
+/*import r1_note1 from './sounds/round1/kat1note1.mp3';
 import r1_note2 from './sounds/round1/kat1note2.mp3';
 import r1_note3 from './sounds/round1/kat1note3.mp3';                                                                                          
 import r1_note4 from './sounds/round1/kat1note4.mp3';
@@ -55,15 +58,15 @@ import r4_note3 from './sounds/round4/note3.mp3';
 import r4_note4 from './sounds/round4/note4.mp3';                                                                                                                                                              
 import r4_note5 from './sounds/round4/note5.mp3';
 import r4_note6 from './sounds/round4/note6.mp3';
-import r4_note7 from './sounds/round4/note7.mp3';
+import r4_note7 from './sounds/round4/note7.mp3';*/
 
 
 const App = () => {
     const [pull, setPull] = useState(0);
-    const PlayerName = ["Игрок1", "Игрок2", "Игрок3"];
+    /*const PlayerName = ["Игрок1", "Игрок2", "Игрок3"];*/
     const point1 = [20, 25, 30, 50, 0]; 
     const point2 = [25, 50, 75, 100, 0];
-    const category1 = ["Музыка школьных дискотек", "Наши 2000-е", "Саундтреки из сериалов", "Мировые хиты"];
+    /*const category1 = ["Музыка школьных дискотек", "Наши 2000-е", "Саундтреки из сериалов", "Мировые хиты"];
     const category2 = ["Зарубежный поп", "Зарубежный рок", "Русский поп", "Русский рок"];
     const notesRound1 = [r1_note1, r1_note2, r1_note3, r1_note4, r1_note5, r1_note6, r1_note7, r1_note8,
         r1_note9, r1_note10, r1_note11, r1_note12, r1_note13, r1_note14, r1_note15, r1_note16];
@@ -77,26 +80,24 @@ const App = () => {
         "Песня о том, что нужно прислушиваться к себе.",
         "Песня о любви Тьмы к Свету.", " "
     ];
-    const notesRound4 = [r4_note1, r4_note2, r4_note3, r4_note4, r4_note5, r4_note6, r4_note7]; 
+    const notesRound4 = [r4_note1, r4_note2, r4_note3, r4_note4, r4_note5, r4_note6, r4_note7];*/ 
     return (
-        <div>
-             <header>
-                <div>
+        <div className="gridbox">
+             <header className="head">
                     <Link to="/" className="HeaderLink"><img src={logo} alt="logo"/></Link>
                     <div className="title"><h1>Угадай мелодию</h1></div>
-                </div>
             </header>
             <Routes>
                 <Route path="/" element={<Menu/>}/>
-                <Route path="/round1" element={<Round1 round="1" note={notesRound1} category={category1} onChange={(i) => setPull(point1[i])}/>}/>
-                <Route path="/round2" element={<Round1 round="2" note={notesRound2} category={category2} onChange={(i) => setPull(point2[i])}/>}/>
-                <Route path="/round3" element={<Round3 round="3" note={notesRound3} description={descript}/>}/>
-                <Route path="/round4" element={<Round4 round="4" note={notesRound4}/>}/>
+                <Route path="/round1" element={<Round1 round="1" /*note={SOUNDS} category={category1}*/ onChange={(i) => setPull(point1[i])}/>}/>
+                <Route path="/round2" element={<Round1 round="2" /*note={notesRound2} category={category2}*/ onChange={(i) => setPull(point2[i])}/>}/>
+                <Route path="/round3" element={<Round3 round="3" /*note={notesRound3} description={descript}*//>}/>
+                <Route path="/round4" element={<Round4 round="4" /*note={notesRound4}*//>}/>
             </Routes>
             <div className="Playercard">                                                            
-                <Playercard pull={pull} PlayerName={PlayerName[0]}/>                                        
-                <Playercard pull={pull} PlayerName={PlayerName[1]}/>                                        
-                <Playercard pull={pull} PlayerName={PlayerName[2]}/>                                        
+                <Playercard pull={pull} PlayerName={PLAYER_NAMES.PLAYER_1}/>                                        
+                <Playercard pull={pull} PlayerName={PLAYER_NAMES.PLAYER_2}/>                                        
+                <Playercard pull={pull} PlayerName={PLAYER_NAMES.PLAYER_3}/>                                        
             </div>
         </div>
     );
