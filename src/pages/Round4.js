@@ -10,34 +10,10 @@ const Round4 = (props) => {
     const [isCounting, setIsCounting] = useState(false);
     const [counter, setCounter] = useState(0);
     const [img_note, setColorNote] = useState([]);
-    /*const promisPlay = new Promise((resolve, reject) => {
-      noteRef[0].current.play();
-      setTimeout(() => {}, 10000);
-      resolve();
-    });*/
+
     useEffect(() => {
             if(isCounting && (time > 0)){
               const interval = setInterval(() => {setTime(time - 1)}, 1000);
-            //const interval = setInterval(() => {if(isCounting) setTime(time + 1)}, 1000);
-            //let i = 0;
-
-/*              const promisPlay = new Promise((resolve, reject) => {
-                noteRef[counter].current.play();
-                setTimeout(() => {
-                  setCounter(counter + 1);
-                  resolve();
-                }, 11000);
-              });*/
-
-            //promisPlay.then(() => noteRef[counter].current.play());
-
-            /*if(time<10) noteRef[0].current.play();
-            else if((10<=time)&&(time<20)) noteRef[1].current.play();
-            else if((20<=time)&&(time<30)) noteRef[2].current.play();
-            else if((30<=time)&&(time<40)) noteRef[3].current.play();
-            else if((40<=time)&&(time<50)) noteRef[4].current.play();
-            else if((50<=time)&&(time<60)) noteRef[5].current.play();
-            else if((60<=time)&&(time<70)) noteRef[6].current.play();*/
               return () => {clearInterval(interval);};
             }
     }, [isCounting, time]);
@@ -61,31 +37,24 @@ const Round4 = (props) => {
     }, [props.round]);
 
     const noteRef = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
-
-    //const buttonPlay = () => isCounting ? setIsCounting(false) : setIsCounting(true);
     const buttonPlay = (i) => {
         if(isCounting){
           if(i === 7) setIsCounting(false);
           else{
             noteRef[counter].current.pause();
             setCounter(i);
-            //noteRef[counter].current.play();
           }
         }
         else{
-            //noteRef[2].current.play();
-            //console.log(time);
             setIsCounting(true);
         }
     }
-    //props.note.play();
     return(
         <div className="mainbox">
             <div className="nRound">
                 <div className="number">{props.round}</div>
                 <div>Раунд</div>
             </div>
-            {/*<div onClick={() => buttonPlay(7)}>play</div>*/}
 
             <div className="NoteTable">
                 <div className="TimerCounter">{time}</div>

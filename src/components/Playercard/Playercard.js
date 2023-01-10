@@ -4,18 +4,19 @@ import logo from './logo.svg';
 
 const Playercard = (props) => {
     const [point, setPoint] = useState(0);
+    const [looseFlag, setLooseFlag] = useState(false);
     const addPoint = () => {
         setPoint(point+props.pull);
-        //console.log(props.pull);
-        //givePoint(0);
     }
+    const looseFunck = () => setLooseFlag(true);
     return(
-        <div className="wrappercard" onClick={addPoint}>
+        <div className="wrappercard">
             <div>
                 <img src={logo} alt="logotip" className="playerlogo"/>
-                <h2 className="kush">{point}</h2>
-                <h2 className="player">{props.PlayerName}</h2>
+                <h2 className="kush" onClick={addPoint}>{point}</h2>
+                <h2 className="player" onClick={looseFunck}>{props.PlayerName}</h2>
             </div>
+            {looseFlag && <div className="loosebox"></div>}
         </div>
     );
 }
