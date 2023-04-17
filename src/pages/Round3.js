@@ -25,7 +25,7 @@ const Round3 = (props) => {
         }
         else if(img_note[i] === yellow_note_img){                                                                                                                                                                    
             noteRef[i].current.play();                                                                                                                                                                      
-            //props.onChange(i);                                                                                                                                                                                 
+            //props.onChange();                                                                                                                                                                                 
             setColorNote([...img_note.slice(0, i), green_note_img, ...img_note.slice(i + 1)]);                                                                                                                 
         }                                                                                                                                                                                                 
         else if(img_note[i] === green_note_img){
