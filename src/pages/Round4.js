@@ -12,6 +12,10 @@ const Round4 = (props) => {
     const [img_note, setColorNote] = useState([]);
 
     useEffect(() => {
+        setColorNote([note_img, note_img, note_img, note_img, note_img, note_img, note_img]);
+    }, [props.round]);    
+
+    useEffect(() => {
             if(isCounting && (time > 0)){
               const interval = setInterval(() => {setTime(time - 1)}, 1000);
               return () => {clearInterval(interval);};
@@ -22,6 +26,7 @@ const Round4 = (props) => {
       if(isCounting){
         const promisPlay = new Promise((resolve, reject) => {
           noteRef[counter].current.play();
+          setColorNote([...img_note.slice(0, counter), yellow_note_img, ...img_note.slice(counter + 1)]);
           const timer = setTimeout(() => {
             setCounter(counter + 1);
             resolve();
@@ -32,9 +37,7 @@ const Round4 = (props) => {
       }
     }, [isCounting, counter]);
 
-    useEffect(() => {
-        setColorNote([note_img, note_img, note_img, note_img, note_img, note_img, note_img]);
-    }, [props.round]);
+
 
     const noteRef = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
     const buttonPlay = (i) => {

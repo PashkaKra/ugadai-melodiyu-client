@@ -10,9 +10,21 @@ import { PLAYER_NAMES } from './preferences/PrefCom';
 import './App.css';
 
 const App = () => {
+    /*const location = useLocation();
+    let kash = 0;*/
     const [pull, setPull] = useState(0);
     const point1 = [20, 25, 30, 50, 0]; 
     const point2 = [25, 50, 75, 100, 0];
+    /*const [r3pull, setR3pull] = useState(0);
+
+        if(location.pathname === '/round3'){
+            kash = r3pull;
+        }
+        else{
+            kash = pull;
+        }
+        console.log(location);*/
+
     const bool = true;
     return (
         <div className="gridbox">
