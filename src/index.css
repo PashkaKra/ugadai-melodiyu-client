@@ -58,6 +58,8 @@ header img{
 
 .kush{
     position: absolute;
+    display: flex;
+    justify-content: space-around;
     height: 90px;
     top: 90px;
     width: 50%;

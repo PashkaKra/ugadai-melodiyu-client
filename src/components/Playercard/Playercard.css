@@ -8,3 +8,13 @@
     height: 100%;
     z-index: 99999999;
 }
+
+.countBox{
+    align-self: center;
+    width: 100;
+}
+
+.changeCountBox{ 
+    align-self: center;
+    color: #808080;
+}
