@@ -47,9 +47,9 @@ const Playercard = (props) => {
             <div>
                 <img src={logo} alt="logotip" className="playerlogo"/>
                 <div className="kush">
-                    <div onClick={subPoint}>-</div>
-                    <h2>{count}</h2>
-                    <div onClick={addPoint}>+</div>
+                    <div onClick={subPoint} className="changeCountBox">-</div>
+                    <h2 className="countBox">{count}</h2>
+                    <div onClick={addPoint} className="changeCountBox">+</div>
                 </div>
                 
                 <h2 className="player" onClick={looseFunck}>{props.PlayerName}</h2>
