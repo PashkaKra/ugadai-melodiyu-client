@@ -88,12 +88,19 @@ header img{
 }
 
 .category{
-    display: inline-block;
+    /*display: inline-block;*/
+    /*align-self: center;*/
+    display: flex;
     background-color: #ec6718ff;
     color: white;
     padding-left: 10px;
     width: 500px;
     /*height: 90px;*/
+}
+
+.category h2{
+  align-self: center;
+  font-size: 35px;
 }
 
 .title{

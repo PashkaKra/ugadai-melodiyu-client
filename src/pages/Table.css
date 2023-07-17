@@ -157,11 +157,16 @@ hr{
 
 .RoundLink{
     display: inline-block;
+    text-align: center;
     font-size: 100px;
     color: #ec6718ff;
     padding: 50px;
     text-decoration: none;
 }
+
+/*.RoundLink div{
+    justify-content: center;
+}*/
 
 .RoundLink:hover{
     color: #f29300ff;
